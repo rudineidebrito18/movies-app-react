@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import MovieCard, { MovieCardProps } from "../components/MovieCard";
+import MovieCard from "../components/MovieCard";
+import Movie from "../models/movie";
 
 function Home() {
     const [topMovies, setTopMovies] = useState([]);
@@ -18,15 +19,9 @@ function Home() {
 
     return (
         <div className="homeContainer">
-            {topMovies && topMovies.map((movie: MovieCardProps) => {
+            {topMovies && topMovies.map((movie: Movie) => {
                 return (
-                    <MovieCard
-                        title={movie.title}
-                        vote_average={movie.vote_average}
-                        poster_path={movie.poster_path}
-                        release_date={movie.release_date}
-                        key={movie.id}
-                    />
+                    <MovieCard movie={movie} key={movie.id}/>
                 )
             })}
         </div>
