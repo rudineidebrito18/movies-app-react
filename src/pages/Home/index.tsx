@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import api from "../services/api";
-import MovieCard from "../components/MovieCard";
-import Movie from "../models/movie";
+import api from "../../services/api";
+import MovieCard from "../../components/MovieCard";
+import Movie from "../../models/movie";
+
+import "./style.css"
 
 function Home() {
     const [topMovies, setTopMovies] = useState([]);
