@@ -4,6 +4,7 @@ import MovieCard from "../../components/MovieCard";
 import Movie from "../../models/movie";
 
 import "./style.css"
+import Navbar from "../../components/Navbar";
 
 function Home() {
     const [topMovies, setTopMovies] = useState([]);
@@ -20,13 +21,16 @@ function Home() {
     }, []);
 
     return (
-        <div className="homeContainer">
-            {topMovies && topMovies.map((movie: Movie) => {
-                return (
-                    <MovieCard movie={movie} key={movie.id}/>
-                )
-            })}
-        </div>
+        <>
+            <Navbar showSearch/>
+            <div className="mainContainer">
+                {topMovies && topMovies.map((movie: Movie) => {
+                    return (
+                        <MovieCard movie={movie} key={movie.id} />
+                    )
+                })}
+            </div>
+        </>
     );
 }
 

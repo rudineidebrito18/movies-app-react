@@ -1,47 +1,40 @@
-import { Link } from "react-router-dom";
-import './style.css'
+import { Link, useNavigate } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi"
-import { useEffect, useState } from "react";
+import './style.css'
+import { useState } from "react";
 
-const root = document.getElementsByTagName("html")[0];
+interface NavbarProps {
+    showSearch?: boolean
+}
 
-function Navbar() {
-    const [theme, setTheme] = useState("light")
+function Navbar(props: NavbarProps) {
+    const [search, setSearch] = useState('');
+    const navigate = useNavigate()
 
-    const toggleTheme = () => {
-        if (theme === "light") {
-            window.localStorage.setItem("theme", "dark");
-            root?.classList.remove("light")
-            root?.classList.add("dark")
-            setTheme("dark");
-        } else {
-            window.localStorage.setItem("theme", "light");
-            root?.classList.remove("dark")
-            root?.classList.add("light")
-            setTheme("light");
-        }
+    function handleSubmit(e: any) {
+        e.preventDefault()
+        if (!search) return
+
+        navigate(`/search?q=${search}`)
     }
-    
-    useEffect(() => {
-        const localTheme = window.localStorage.getItem("theme");
-        localTheme && setTheme(localTheme)
-        localTheme && root?.classList.add(localTheme)
-    }, [])
 
     return (
         <nav id="navbarContainer" className="navbarContainer">
             <h2>
                 <Link to="/">MoviesApp</Link>
             </h2>
-            <button onClick={toggleTheme} >trocar theme</button>
-            <form>
-                <input type="text" placeholder="Busque um filme" />
-                <button type="submit">
-                    <BiSearchAlt2 />
-                </button>
-            </form>
+            {props.showSearch ?
+                <form onSubmit={handleSubmit} >
+                    <input type="text" placeholder="Busque um filme"
+                        onChange={(e) => setSearch(e.target.value)}
+                        value={search}
+                    />
+                    <button type="submit">
+                        <BiSearchAlt2 />
+                    </button>
+                </form> : <div></div>}
         </nav>
-    );
+    )
 }
 
 export default Navbar;

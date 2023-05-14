@@ -3,15 +3,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border: solid 2px var(--color-border); */
-    border-radius: 1rem;
     box-shadow: 4px 4px 8px 0 var(--color-border);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
 .movieCardContainer:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .movieCardContainer .posterContainer {

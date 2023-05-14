@@ -1,4 +1,4 @@
-.light:root {
+:root {
     --color-primary: #1446A0;
     --color-secondary: #F5D547;
     --color-bg: #3C3C3B;
@@ -7,15 +7,16 @@
     --color-border: #000;
 }
 
-.dark:root {
+/* .dark:root {
     --color-primary: #1446A0;
     --color-secondary: #F5D547;
     --color-bg: #DB3069;
     --color-text: #fff;
     --color-fill: #EBEBD3;
     --color-border: #000;
-}
+} */
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }

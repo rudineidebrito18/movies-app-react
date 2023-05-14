@@ -21,10 +21,15 @@
     border-radius: 0.5rem 0 0 0.5rem;
     height: 2.4rem;
 }
+
 .navbarContainer form button {
     color: var(--color-primary);
     background-color: var(--color-bg);
     border: solid 2px var(--color-border);
     border-radius: 0 0.5rem 0.5rem 0;
     height: 2.4rem;
+}
+
+.navbarContainer form button:hover {
+    border-color: var(--color-secondary);
 }
