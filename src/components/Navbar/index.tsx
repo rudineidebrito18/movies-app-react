@@ -3,11 +3,8 @@ import { BiSearchAlt2 } from "react-icons/bi"
 import './style.css'
 import { useState } from "react";
 
-interface NavbarProps {
-    showSearch?: boolean
-}
 
-function Navbar(props: NavbarProps) {
+function Navbar() {
     const [search, setSearch] = useState('');
     const navigate = useNavigate()
 
@@ -19,11 +16,11 @@ function Navbar(props: NavbarProps) {
     }
 
     return (
-        <nav id="navbarContainer" className="navbarContainer">
-            <h2>
-                <Link to="/">MoviesApp</Link>
-            </h2>
-            {props.showSearch ?
+        <div className="navbarBox">
+            <nav id="navbarContainer" className="navbarContainer">
+                <h2>
+                    <Link to="/">MoviesApp</Link>
+                </h2>
                 <form onSubmit={handleSubmit} >
                     <input type="text" placeholder="Busque um filme"
                         onChange={(e) => setSearch(e.target.value)}
@@ -32,8 +29,9 @@ function Navbar(props: NavbarProps) {
                     <button type="submit">
                         <BiSearchAlt2 />
                     </button>
-                </form> : <div></div>}
-        </nav>
+                </form>
+            </nav>
+        </div>
     )
 }
 

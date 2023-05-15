@@ -1,29 +1,39 @@
+.navbarBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 6rem;
+    background-color: var(--color-primary);
+    position: sticky;
+    z-index: 5;
+    top: 0;
+}
+
 .navbarContainer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 6rem;
-    background-color: var(--color-bg);
-    padding: 0 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 5;
+    padding: 0 2rem;
+    max-width: 1360px;
+    width: 100%;
 }
 
 .navbarContainer a {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: var(--color-fill);
 }
 
 .navbarContainer form input {
     background-color: var(--color-bg);
+    color: var(--color-text);
     border: solid 2px var(--color-border);
     border-radius: 0.5rem 0 0 0.5rem;
     height: 2.4rem;
 }
 
 .navbarContainer form button {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     background-color: var(--color-bg);
     border: solid 2px var(--color-border);
     border-radius: 0 0.5rem 0.5rem 0;
@@ -31,5 +41,5 @@
 }
 
 .navbarContainer form button:hover {
-    border-color: var(--color-secondary);
+    background-color: var(--color-primary);
 }

@@ -3,8 +3,8 @@ import api from "../../services/api";
 import MovieCard from "../../components/MovieCard";
 import Movie from "../../models/movie";
 
-import "./style.css"
 import Navbar from "../../components/Navbar";
+import Area from "../../components/Area";
 
 function Home() {
     const [topMovies, setTopMovies] = useState([]);
@@ -12,7 +12,6 @@ function Home() {
     const getTopRetedMovies = async (sub: string) => {
         const res = await api(sub).get("");
         const data = await res.data.results;
-
         setTopMovies(data);
     }
 
@@ -22,14 +21,16 @@ function Home() {
 
     return (
         <>
-            <Navbar showSearch/>
-            <div className="mainContainer">
-                {topMovies && topMovies.map((movie: Movie) => {
-                    return (
-                        <MovieCard movie={movie} key={movie.id} />
-                    )
-                })}
-            </div>
+            <Navbar />
+            <Area>
+                <div className="mainContainer">
+                    {topMovies && topMovies.map((movie: Movie) => {
+                        return (
+                            <MovieCard movie={movie} key={movie.id} />
+                        )
+                    })}
+                </div>
+            </Area>
         </>
     );
 }

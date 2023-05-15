@@ -1,0 +1,11 @@
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.titleContainer h1 {
+    font-size: 3rem;
+    color: var(--color-secondary);
+}

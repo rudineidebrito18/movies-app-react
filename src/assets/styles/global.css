@@ -1,22 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Roboto:wght@100;400;700;900&display=swap');
+
 :root {
-    --color-primary: #1446A0;
-    --color-secondary: #F5D547;
-    --color-bg: #3C3C3B;
+    --color-primary: #344966;
+    --color-secondary: #E6AACE;
+    --color-bg: #0D1821;
     --color-text: #fff;
-    --color-fill: #EBEBD3;
-    --color-border: #000;
+    --color-fill: #F0F4EF;
+    --color-border: #000000;
 }
 
-/* .dark:root {
-    --color-primary: #1446A0;
-    --color-secondary: #F5D547;
-    --color-bg: #DB3069;
-    --color-text: #fff;
-    --color-fill: #EBEBD3;
-    --color-border: #000;
-} */
-
 html {
+    font-family: 'Catamaran', sans-serif;
     font-size: 62.5%;
     overflow-x: hidden;
 }

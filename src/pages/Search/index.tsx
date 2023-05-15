@@ -4,6 +4,8 @@ import MovieCard from "../../components/MovieCard";
 import Movie from "../../models/movie";
 import Navbar from "../../components/Navbar";
 import { useSearchParams } from "react-router-dom";
+import Area from "../../components/Area";
+import Title from "../../components/Title";
 
 function Search() {
     const [movies, setMovies] = useState([])
@@ -20,20 +22,27 @@ function Search() {
 
     useEffect(() => {
         query && getSearchMovies(query)
-    },[query])
+    }, [query])
 
-    console.log("render!")
     return (
-        <>  
-            <Navbar showSearch/>
-            <div className="mainContainer">
-                {movies.length === 0 && <p>Carrengando...</p>}
-                {movies.length > 0 && movies.map((movie: Movie) => {
-                    return (
-                        <MovieCard movie={movie} key={movie.id} />
-                    )
-                })}
-            </div>
+        <>
+            <Navbar />
+            <Title>
+                Results for: {query}
+            </Title>
+            <Area>
+                <div className="mainContainer">
+                    {movies.length === 0 ?
+                        <Title>
+                            Carrengando...
+                        </Title> :
+                        movies.map((movie: Movie) => {
+                            return (
+                                <MovieCard movie={movie} key={movie.id} />
+                            )
+                        })}
+                </div>
+            </Area>
         </>
     );
 }
