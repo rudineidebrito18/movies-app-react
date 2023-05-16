@@ -1,19 +1,20 @@
+import { ReactNode } from 'react'
 import './style.css'
 
 interface AreaProps {
-    children: any,
+    children: ReactNode,
     id?: string
 }
 
 function Area(props: AreaProps) {
-    return ( 
-        <div id={props.id ?? ''} className="areaContainer">
-            <div className="area">
-                {props.children}
-            </div>
+	return ( 
+		<div id={props.id ?? ''} className="areaContainer">
+			<div className="area">
+				{props.children}
+			</div>
 
-        </div>
-     );
+		</div>
+	)
 }
 
-export default Area;
+export default Area
