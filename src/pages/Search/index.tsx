@@ -4,7 +4,7 @@ import Area from '../../components/Area'
 import MovieCard from '../../components/MovieCard'
 import Navbar from '../../components/Navbar'
 import Title from '../../components/Title'
-import Movie from '../../models/movie'
+import Movie from '../../models/movieMin'
 import { apiUseSearch } from '../../services/api'
 
 function Search() {
